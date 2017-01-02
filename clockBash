@@ -1,0 +1,17 @@
+#!/bin/bash
+
+while :
+for i in {1..5}
+do
+	date | python proj1.py
+	sleep 1
+done
+do
+	solunar -l 41.3116450,-80.4215250 -q | awk 'NR==5,NR==6{sub(/^[ \t]+/, ""); printf"%-15s%5s", $1, $2}' | python proj1.py
+	sleep 5
+	solunar -l 41.3116450,-80.4215250 -q | awk 'NR==10,NR==11{sub(/^[ \t]+/, ""); printf"%-15s%5s", $1, $2}' | python proj1.py
+        sleep 5
+	solunar -l 41.3116450,-80.4215250 -q | awk 'NR==9{sub(/^[ \t]+/, ""); printf"%s %s%+9s%s %s", $1, $2, $3, $4, $5}' | python proj1.py
+	sleep 5
+done
+
